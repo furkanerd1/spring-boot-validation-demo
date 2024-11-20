@@ -6,9 +6,12 @@ import com.furkan.validation.demo.model.entity.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 
     User toEntity(UserCreateRequest request);
     UserResponse toResponse(User user);
+    List<UserResponse> toResponses(List<User> users);
 }
